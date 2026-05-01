@@ -598,7 +598,6 @@ export default function ApplyPage() {
   const userId = 'mock-user-id';
   const getToken = async () => 'mock-token';
   const signOut = async () => setView('auth');
-  const client = null;
   const [existingApp, setExistingApp] = useState<ApplicationRecord | null>(null);
   const [versions, setVersions]     = useState<VersionRecord[]>([]);
   const [isEditMode, setIsEditMode] = useState(false);
@@ -641,18 +640,11 @@ export default function ApplyPage() {
   }, [getToken]);
 
   const handleSignIn = useCallback(async () => {
-    if (!client) return;
-    try {
-      await client.signIn.authenticateWithRedirect({
-        strategy: 'oauth_google',
-        redirectUrl: '/sso-callback',
-        redirectUrlComplete: '/apply',
-      });
-    } catch (error) {
-      console.error('Google sign-in failed:', error);
-      alert('Could not start Google sign-in. Please try again.');
-    }
-  }, [client]);
+    setView('loading');
+    setTimeout(() => {
+      loadApp();
+    }, 500);
+  }, [loadApp]);
 
   const handleSignOut = useCallback(async () => {
     await signOut();

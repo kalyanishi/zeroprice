@@ -1,12 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/lib/supabase';
-import { getApplicantIdentity, insertWithOptionalClerkUserId } from '@/lib/application-auth';
-import { Resend } from 'resend';
-import ApplicationAdminEmail from '@/emails/ApplicationAdminEmail';
-import ApplicationConfirmationEmail from '@/emails/ApplicationConfirmationEmail';
-import { appendApplicationToSheet } from '@/lib/googleSheets';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
@@ -20,4 +12,3 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
-

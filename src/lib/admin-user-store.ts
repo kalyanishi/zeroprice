@@ -150,7 +150,7 @@ export async function listManagedAdminUsers() {
   }
 
   return {
-    users: (data ?? []).map((row) => toManagedAdminUser(row as AdminUserRow)),
+    users: (data ?? []).map((row: any) => toManagedAdminUser(row as AdminUserRow)),
     storageReady: true,
   };
 }
