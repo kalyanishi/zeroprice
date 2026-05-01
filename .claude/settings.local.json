@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"UserResource\\\\|authenticateWithRedirect\" 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk/shared/dist' --include=*.d.ts -l)",
+      "Bash(grep -r UserResource 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk/nextjs/dist' --include=*.d.ts -l)",
+      "Bash(grep -rn \"UserResource\\\\|authenticateWithRedirect\" 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk/nextjs/dist/types/' --include=*.d.ts -l)",
+      "Bash(npx tsc:*)",
+      "Bash(find 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk' -name *.d.ts)",
+      "Bash(xargs grep:*)",
+      "Bash(find 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk' -type f \\\\\\(-name *.d.ts -o -name *.d.mts \\\\\\))",
+      "Bash(xargs cat:*)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(d.get\\(''''version'''',''''?''''\\)\\)\")",
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/@clerk/nextjs/package.json''\\).version\\)\")",
+      "Bash(find 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk/nextjs' -name *.js)",
+      "Bash(find 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk' -name *.js)",
+      "Bash(node -e \"try{console.log\\(require\\(''./node_modules/@clerk/react/package.json''\\).version\\)}catch\\(e\\){try{console.log\\(require\\(''./node_modules/@clerk/clerk-react/package.json''\\).version\\)}catch\\(e2\\){console.log\\(''not found''\\)}}\")",
+      "Bash(find 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk/react' -type f -name *.js)",
+      "Bash(node -e \"console.log\\(require\\(''./node_modules/@clerk/types/package.json''\\).version\\)\")",
+      "Bash(find 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules' -path */clerk* -name *.d.ts)",
+      "Bash(find 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk/nextjs' -name *.d.ts)",
+      "Bash(find 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk/react' -name *.d.ts)",
+      "Bash(find 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk/shared' -name *.d.ts)",
+      "Bash(find 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk/shared' -name types*)",
+      "Bash(find 'f:/Hostwire Systems/Zero Prize/zeroprize/node_modules/@clerk/shared/dist/types' -name *.js)",
+      "Bash(npm install:*)",
+      "Bash(node -e \":*)"
+    ],
+    "additionalDirectories": [
+      "\\dev\\null f:"
+    ]
+  }
+}
